@@ -1,0 +1,30 @@
+<div
+  animateOnViewport
+  id="education"
+  class="bg-light relative h-full mx-auto px-8 sm:px-12 md:px-24 flex flex-col justify-center py-16 sm:py-20"
+>
+  <div>
+    <div class="mt-6 sm:mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
+      <div class="md:col-span-12 lg:col-span-4">
+        <h2
+          class="text-base-content text-pretty text-xl sm:text-2xl md:text-6xl lg:text-7xl font-bold tracking-tight animate-on-viewport"
+        >
+          {{ t().education.title }}
+        </h2>
+        <hr class="h-1 mt-2 w-20 bg-base-content animate-on-viewport animation-delay-200" />
+      </div>
+      <div class="md:col-span-12 lg:col-span-8">
+        <div class="flex flex-col gap-8 mx-2 sm:mx-4 lg:mx-0">
+          @for (edu of education(); track $index; let isLastItem = $last) {
+            <education-card
+              [degree]="edu.degree"
+              [description]="edu.description"
+              [school]="edu.school"
+              [period]="edu.period"
+            />
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

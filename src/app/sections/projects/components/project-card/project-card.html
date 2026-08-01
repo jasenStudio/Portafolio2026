@@ -1,0 +1,44 @@
+<div
+  class="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 flex items-center justify-center bg-base-content rounded-full text-base-100 transition-all duration-300 group-hover:bg-base-content/80"
+>
+  <svg
+    class="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M7 17L17 7M17 7H7M17 7V17"
+    ></path>
+  </svg>
+</div>
+<div class="space-y-4">
+  <div>
+    <span class="text-primary text-sm font-mono"> {{ id() }} </span>
+    <h3 class="text-xl sm:text-2xl font-bold text-base-content mt-1">{{ title() }}</h3>
+  </div>
+  <p class="text-base sm:text-lg text-base-content/75 leading-relaxed pr-12 sm:pr-14 md:pr-16">
+    {{ description() }}
+  </p>
+
+  <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-2">
+    @for (badge of badges(); track badge; let isFirst = $first) {
+      @if (isFirst) {
+        <span
+          class="badge badge-ghost badge-lg text-base-content px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-sm sm:text-base md:text-lg font-medium transition-colors duration-200 hover:bg-base-300 border border-transparent"
+        >
+          {{ badge }}
+        </span>
+      } @else {
+        <span
+          class="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-md sm:rounded-lg text-xs sm:text-sm font-medium border-none bg-[#1a1d29] text-white dark:bg-[#f0f0f0] dark:text-[#1a1d29]"
+        >
+          {{ badge }}
+        </span>
+      }
+    }
+  </div>
+</div>

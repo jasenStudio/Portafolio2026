@@ -1,0 +1,8 @@
+<ul class="space-y-2">
+  @for (activity of activities(); track $index) {
+    <li class="flex items-start">
+      <span class="inline-block w-1.5 h-1.5 rounded-full bg-base-content/50 mt-2 mr-3 shrink-0"></span>
+      <span class="text-sm sm:text-base text-base-content/75">{{ activity }}</span>
+    </li>
+  }
+</ul>

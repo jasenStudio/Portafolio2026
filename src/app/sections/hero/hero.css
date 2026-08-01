@@ -1,0 +1,15 @@
+.hero-section-background {
+  background: radial-gradient(
+    ellipse 800px 1200px at 0% 0%,
+    oklch(from var(--color-secondary) l c h / 0.4) 0%,
+    oklch(from var(--color-secondary) l c h / 0.25) 20%,
+    oklch(from var(--color-secondary) l c h / 0.1) 40%,
+    transparent 100%
+  );
+}
+
+hero-canvas,
+hero-canvas canvas {
+  pointer-events: none;
+  display: block;
+}

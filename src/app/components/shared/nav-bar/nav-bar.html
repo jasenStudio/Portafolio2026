@@ -1,0 +1,43 @@
+<nav class="navbar bg-base-100/90 backdrop-blur-sm shadow-sm">
+  <div class="navbar-start">
+    <label for="nav-drawer" class="btn btn-ghost lg:hidden">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h8m-8 6h16"
+        />
+      </svg>
+    </label>
+  </div>
+  <!--Desktop-->
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1">
+      <li>
+        <a routerLink="." [fragment]="'about-me'">{{ t().nav.about }}</a>
+      </li>
+      <li>
+        <a routerLink="." [fragment]="'projects'">{{ t().nav.projects }}</a>
+      </li>
+      <li>
+        <a routerLink="." [fragment]="'experience'">{{ t().nav.experience }}</a>
+      </li>
+      <li>
+        <a routerLink="." [fragment]="'education'">{{ t().nav.education }}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="navbar-end">
+    <div class="hidden lg:flex items-center gap-1">
+      <lang-controller />
+      <theme-controller />
+    </div>
+  </div>
+</nav>

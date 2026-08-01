@@ -1,1 +1,147 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss';
+@custom-variant dark (&:where([data-theme="night"], [data-theme="night"] *));
+@plugin "daisyui" {
+  themes:
+    night --prefersdark,
+    cupcake;
+}
+@plugin "daisyui/theme" {
+  name: 'cupcake';
+  default: true;
+  color-scheme: light;
+
+  --color-primary: oklch(50% 0.25 270);
+  --color-primary-content: oklch(98% 0.01 270);
+  --color-secondary: oklch(72% 0.16 285);
+  --color-secondary-content: oklch(98% 0.01 285);
+  --color-accent: oklch(62% 0.2 280);
+  --color-accent-content: oklch(98% 0.01 280);
+}
+
+.ibm-plex-mono-thin {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.ibm-plex-mono-extralight {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.ibm-plex-mono-light {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.ibm-plex-mono-regular {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ibm-plex-mono-medium {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.ibm-plex-mono-semibold {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.ibm-plex-mono-bold {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.ibm-plex-mono-thin-italic {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.ibm-plex-mono-extralight-italic {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.ibm-plex-mono-light-italic {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.ibm-plex-mono-regular-italic {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.ibm-plex-mono-medium-italic {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.ibm-plex-mono-semibold-italic {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.ibm-plex-mono-bold-italic {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 700;
+  font-style: italic;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out both;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+.animation-delay-800 {
+  animation-delay: 800ms;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 400;
+  font-style: normal;
+  height: 100%;
+}

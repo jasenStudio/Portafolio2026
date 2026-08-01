@@ -1,0 +1,14 @@
+<div class="dropdown" [class.dropdown-end]="!dropdownTop()" [class.dropdown-top]="dropdownTop()">
+  <div tabindex="0" role="button" class="btn btn-ghost btn-sm uppercase gap-1">
+    @if (languageService.getLang() === 'es') {
+      🇨🇴
+    } @else {
+      🏴󠁧󠁢󠁥󠁮󠁧󠁿
+    }
+    {{ languageService.getLang() }}
+  </div>
+  <ul tabindex="-1" class="dropdown-content menu bg-base-100 rounded-box z-50 w-22 p-2 shadow">
+    <li><a (click)="changeLang('es')">🇨🇴 ES</a></li>
+    <li><a (click)="changeLang('en')">🏴󠁧󠁢󠁥󠁮󠁧󠁿 EN</a></li>
+  </ul>
+</div>

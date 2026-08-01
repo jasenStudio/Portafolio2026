@@ -1,0 +1,23 @@
+<label for="nav-drawer" class="drawer-overlay"></label>
+<div class="flex flex-col min-h-full w-72 bg-base-100 text-base-content p-4">
+  <ul class="menu">
+    <li>
+      <a (click)="close.emit()">{{ t().nav.about }}</a>
+    </li>
+    <li>
+      <a (click)="close.emit()">{{ t().nav.projects }}</a>
+    </li>
+    <li>
+      <a (click)="close.emit()">{{ t().nav.experience }}</a>
+    </li>
+    <li>
+      <a (click)="close.emit()">{{ t().nav.education }}</a>
+    </li>
+  </ul>
+  <div class="mt-auto border-t border-base-300 pt-2">
+    <div class="flex items-center justify-between gap-2 px-1">
+      <lang-controller [dropdownTop]="true" (selectionChange)="close.emit()" />
+      <theme-controller (selectionChange)="close.emit()" />
+    </div>
+  </div>
+</div>

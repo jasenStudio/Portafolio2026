@@ -1,0 +1,23 @@
+<div class="relative mb-12" [class.mb-0]="isLastItem()">
+  <div
+    class="absolute left-1/2 -top-2 w-4 h-4 bg-primary border-2 border-primary rounded-full -translate-x-1/2 z-20 transition-all duration-300"
+  ></div>
+
+  <div
+    [class.hidden]="isLastItem()"
+    class="absolute left-1/2 bottom-0 w-0.5 h-12 bg-base-content -translate-x-1/2 translate-y-full z-10"
+  ></div>
+
+  <div
+    class="bg-base-100 rounded-lg shadow-sm border border-base-300 p-4 sm:p-5 md:p-6 hover:shadow-md transition-shadow duration-300"
+  >
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+      <div>
+        <h3 class="text-lg sm:text-xl font-semibold text-base-content">{{ role() }}</h3>
+        <p class="text-base sm:text-lg text-primary">{{ company() }}</p>
+      </div>
+      <span class="text-xs sm:text-sm text-base-content mt-2 sm:mt-0">{{ period() }}</span>
+    </div>
+    <experience-details-list [activities]="activities()" />
+  </div>
+</div>

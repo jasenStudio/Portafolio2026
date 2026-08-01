@@ -1,0 +1,41 @@
+<div
+  animateOnViewport
+  id="about-me"
+  class="bg-light relative h-full mx-auto px-8 sm:px-12 md:px-24 flex flex-col justify-center py-16 sm:py-20"
+>
+  <div>
+    <div class="mt-6 sm:mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
+      <div class="md:col-span-12 lg:col-span-4">
+        <h2
+          class="pt-10 sm:pt-0 text-base-content text-pretty text-xl sm:text-2xl md:text-6xl lg:text-7xl font-bold tracking-tight animate-on-viewport"
+        >
+          {{ t().about.title }}
+        </h2>
+        <hr class="h-1 mt-2 w-20 bg-base-content animate-on-viewport animation-delay-200" />
+      </div>
+      <div class="md:col-span-12 lg:col-span-8">
+        <div class="mx-2 sm:mx-4 lg:mx-0">
+          @for (paragraph of content().paragraphs; track $index) {
+            <p
+              class="text-base-content text-pretty text-base sm:text-lg md:text-xl leading-relaxed"
+              [class.mt-4]="$index > 0"
+              [style.animation-delay]="($index + 1) * 200 + 'ms'"
+            >
+              {{ paragraph }}
+            </p>
+          }
+          <div class="flex flex-wrap gap-2 mt-10 animate-on-viewport animation-delay-800">
+          <div class="flex flex-wrap gap-2 md:gap-3">
+            @for (tech of content().technologies; track tech) {
+              <span
+                class="badge badge-ghost badge-lg text-base-content px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-sm sm:text-base md:text-lg font-medium transition-colors duration-200 hover:bg-base-300 border border-transparent"
+              >
+                {{ tech }}
+              </span>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
