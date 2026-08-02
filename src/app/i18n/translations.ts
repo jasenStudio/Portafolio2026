@@ -5,6 +5,7 @@ interface TranslationShape {
   experience: { title: string };
   education: { title: string };
   projects: { title: string };
+  footer: { copyright: string };
 }
 
 export const translations: Record<import('./language').Language, TranslationShape> = {
@@ -25,6 +26,9 @@ export const translations: Record<import('./language').Language, TranslationShap
     experience: { title: 'Experiencia' },
     education: { title: 'Educación' },
     projects: { title: 'Proyectos' },
+    footer: {
+      copyright: 'Derechos reservados',
+    },
   },
   en: {
     nav: {
@@ -43,5 +47,8 @@ export const translations: Record<import('./language').Language, TranslationShap
     education: { title: 'Education' },
     experience: { title: 'Experience' },
     projects: { title: 'Projects' },
+    footer: {
+      copyright: 'All rights reserved',
+    },
   },
 };

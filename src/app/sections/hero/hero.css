@@ -1,3 +1,8 @@
+:host {
+  display: block;
+  height: 100vh;
+}
+
 .hero-section-background {
   background: radial-gradient(
     ellipse 800px 1200px at 0% 0%,

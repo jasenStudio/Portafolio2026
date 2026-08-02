@@ -1,8 +1,10 @@
 import { Component, input } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { Link } from '../../../../components/shared/link/link';
 
 @Component({
   selector: 'project-card',
-  imports: [],
+  imports: [Link],
   templateUrl: './project-card.html',
   styleUrl: './project-card.css',
 })
@@ -12,4 +14,5 @@ export class ProjectCard {
   description = input.required<string>();
   badges = input.required<string[]>();
   href = input.required<string>();
+  slug = input.required<string>();
 }

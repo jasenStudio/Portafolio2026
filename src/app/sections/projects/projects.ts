@@ -3,10 +3,12 @@ import { AnimateOnViewport } from '../../directives/animate-on-viewport';
 import { LanguageService } from '../../i18n/language.service';
 import { ProjectCard } from './components/project-card/project-card';
 import { projectsData } from './content/projects.data';
+import { RouterLink } from '@angular/router';
+import { Link } from '../../components/shared/link/link';
 
 @Component({
   selector: 'app-projects',
-  imports: [AnimateOnViewport, ProjectCard],
+  imports: [AnimateOnViewport, ProjectCard, Link],
   templateUrl: './projects.html',
   styleUrl: './projects.css',
 })

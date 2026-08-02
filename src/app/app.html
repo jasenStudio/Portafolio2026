@@ -1,12 +1,10 @@
 <div class="drawer">
   <input #drawerChk id="nav-drawer" type="checkbox" class="drawer-toggle" />
-  <div class="drawer-content flex flex-col">
+  <div class="drawer-content flex flex-col min-h-screen">
     <nav-bar class="fixed top-0 left-0 right-0 z-50" />
-    <section-hero class="h-screen" />
-    <app-about-me class="min-h-screen" />
-    <app-projects class="min-h-screen" />
-    <app-experience class="min-h-screen" />
-    <app-education class="min-h-screen" />
+    <main class="flex-1">
+      <router-outlet />
+    </main>
     <app-footer />
   </div>
   <nav-drawer (close)="closeDrawer()" />

@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LanguageService } from '../../../i18n/language.service';
+import { SocialMedia } from '../icons/social-media/social-media';
 
 @Component({
   selector: 'app-footer',
-  imports: [],
+  imports: [SocialMedia],
   templateUrl: './footer.html',
   styleUrl: './footer.css',
 })
-export class Footer {}
+export class Footer {
+  t = inject(LanguageService).t;
+}
