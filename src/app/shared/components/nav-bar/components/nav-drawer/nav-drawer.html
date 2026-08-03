@@ -2,16 +2,16 @@
 <div class="flex flex-col min-h-full w-72 bg-base-100 text-base-content p-4">
   <ul class="menu">
     <li>
-      <a (click)="close.emit()">{{ t().nav.about }}</a>
+      <a routerLink="." [fragment]="'about-me'">{{ t().nav.about }}</a>
     </li>
     <li>
-      <a (click)="close.emit()">{{ t().nav.projects }}</a>
+      <a routerLink="." [fragment]="'projects'">{{ t().nav.projects }}</a>
     </li>
     <li>
-      <a (click)="close.emit()">{{ t().nav.experience }}</a>
+      <a routerLink="." [fragment]="'experience'">{{ t().nav.experience }}</a>
     </li>
     <li>
-      <a (click)="close.emit()">{{ t().nav.education }}</a>
+      <a routerLink="." [fragment]="'education'">{{ t().nav.education }}</a>
     </li>
   </ul>
   <div class="mt-auto border-t border-base-300 pt-2">
