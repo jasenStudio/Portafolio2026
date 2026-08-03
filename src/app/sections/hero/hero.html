@@ -14,6 +14,7 @@
   <div
     class="relative z-10 flex-1 flex flex-col justify-center px-4 sm:px-12 md:px-24 py-4 md:py-0"
   >
+    <!-- Greeting and basic information-->
     <div>
       <h2
         class="text-base-content text-pretty text-xl sm:text-2xl md:text-5xl font-bold tracking-tight animate-fade-in"
@@ -31,13 +32,13 @@
         {{ t().hero.role }}
       </p>
     </div>
+    <!-- Social media-->
+    <app-social-media
+      [divClass]="
+        'absolute bottom-[20%] md:bottom-[10%] lg:bottom-[2%] z-10 py-4 sm:py-6 md:py-8 md:pb-16 flex gap-x-4 sm:gap-x-6 md:gap-x-8 text-base-content/70 animate-fade-in animation-delay-600'
+      "
+    />
   </div>
-
-  <app-social-media
-    [divClass]="
-      'relative z-10 px-4 sm:px-12 md:px-24 py-4 sm:py-6 md:py-8 md:pb-16 flex gap-x-4 sm:gap-x-6 md:gap-x-8 text-base-content/70 animate-fade-in animation-delay-600'
-    "
-  />
 
   <div
     class="absolute z-20 top-32 right-4 sm:right-8 md:right-12 flex flex-col items-center gap-1.5 pointer-events-auto"
