@@ -8,12 +8,20 @@ import {
 } from '@angular/core';
 import { extend } from 'angular-three';
 import { NgtcPhysics } from 'angular-three-cannon';
-import * as THREE from 'three';
+import {
+  AmbientLight,
+  BoxGeometry,
+  Mesh,
+  MeshBasicMaterial,
+  MeshStandardMaterial,
+  PlaneGeometry,
+  PointLight,
+} from 'three';
 import { FloatingCube } from './floating-cube';
 import { BoundaryPlane } from './plane';
 import { PhysicsState } from './state';
 
-extend(THREE);
+extend({ AmbientLight, BoxGeometry, Mesh, MeshBasicMaterial, MeshStandardMaterial, PlaneGeometry, PointLight });
 
 @Component({
   selector: 'app-scene-graph',

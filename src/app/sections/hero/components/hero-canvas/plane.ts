@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { NgtArgs } from 'angular-three';
 import { plane } from 'angular-three-cannon/body';
-import * as THREE from 'three';
+import type { Mesh } from 'three';
 
 @Component({
   selector: 'app-boundary-plane',
@@ -26,7 +26,7 @@ export class BoundaryPlane {
   position = input.required<[number, number, number]>();
   rotation = input<[number, number, number]>([0, 0, 0]);
 
-  private meshRef = viewChild.required<ElementRef<THREE.Mesh>>('mesh');
+  private meshRef = viewChild.required<ElementRef<Mesh>>('mesh');
 
   constructor() {
     plane(

@@ -1,10 +1,12 @@
 import { Routes } from '@angular/router';
-import { PorfolioPage } from './pages/porfolio-page/porfolio-page';
+import { provideNgtRenderer } from 'angular-three/dom';
+
 export const routes: Routes = [
   {
     path: '',
     title: 'pageTitle.portfolio',
-    component: PorfolioPage,
+    loadComponent: () => import('./pages/porfolio-page/porfolio-page').then((m) => m.PorfolioPage),
+    providers: [provideNgtRenderer()],
   },
   {
     path: 'projects',

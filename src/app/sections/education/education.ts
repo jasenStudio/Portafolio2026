@@ -13,7 +13,4 @@ export class Education {
   private lang = inject(LanguageService);
   t = this.lang.t;
   education = computed(() => educationData[this.lang.current()]);
-  constructor() {
-    console.log(this.education());
-  }
 }

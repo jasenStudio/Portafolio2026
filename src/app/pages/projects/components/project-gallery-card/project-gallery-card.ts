@@ -1,9 +1,12 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, computed, inject, input, signal } from '@angular/core';
-import { register } from 'swiper/element/bundle';
+import { register } from 'swiper/element';
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
 import { LanguageService } from '../../../../i18n/language.service';
 import { technologiesData, technology } from '../../../../shared/content/technologies';
 import { DialogService } from '../../../../services/dialog.service';
 
+Swiper.use([Navigation, Pagination]);
 register();
 
 const DESCRIPTION_LIMIT = 120;

@@ -1,0 +1,89 @@
+{
+  "url": "https://portfolio-jasedev.netlify.app/",
+  "fetchTime": "2026-08-03T06:17:30.378Z",
+  "formFactor": "mobile",
+  "note": "Se excluyeron recursos de extensiones de Chrome (chrome-extension://) del analisis, no forman parte de la app.",
+  "scores": {
+    "Performance": 0.63,
+    "Accessibility": 0.93,
+    "Best Practices": 0.96,
+    "SEO": 0.8
+  },
+  "metrics": {
+    "firstContentfulPaintMs": 4202.252,
+    "largestContentfulPaintMs": 4951.337949999999,
+    "totalBlockingTimeMs": 361,
+    "cumulativeLayoutShift": 0,
+    "speedIndexMs": 4202.252,
+    "timeToInteractiveMs": 5222.16121,
+    "maxPotentialFidMs": 268
+  },
+  "mainThreadBreakdown": [
+    {
+      "group": "Script Evaluation",
+      "ms": 1679
+    },
+    {
+      "group": "Other",
+      "ms": 1009
+    },
+    {
+      "group": "Style & Layout",
+      "ms": 280
+    },
+    {
+      "group": "Rendering",
+      "ms": 118
+    },
+    {
+      "group": "Garbage Collection",
+      "ms": 28
+    },
+    {
+      "group": "Parse HTML & CSS",
+      "ms": 18
+    },
+    {
+      "group": "Script Parsing & Compilation",
+      "ms": 17
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "unused-javascript",
+      "title": "Reduce unused JavaScript",
+      "savingsMs": 750,
+      "savingsKB": 474
+    }
+  ],
+  "unusedJavaScript": [
+    {
+      "url": "https://portfolio-jasedev.netlify.app/main-NSTU57RO.js",
+      "totalKB": 350,
+      "wastedKB": 130
+    },
+    {
+      "url": "https://portfolio-jasedev.netlify.app/chunk-IPXIXC6E.js",
+      "totalKB": 76,
+      "wastedKB": 21
+    }
+  ],
+  "scriptExecutionTime": [
+    {
+      "url": "https://portfolio-jasedev.netlify.app/main-NSTU57RO.js",
+      "totalMs": 1430
+    },
+    {
+      "url": "https://portfolio-jasedev.netlify.app/chunk-IPXIXC6E.js",
+      "totalMs": 556
+    },
+    {
+      "url": "Unattributable",
+      "totalMs": 516
+    },
+    {
+      "url": "https://portfolio-jasedev.netlify.app/",
+      "totalMs": 508
+    }
+  ]
+}

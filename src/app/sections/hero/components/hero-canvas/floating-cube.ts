@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { NgtArgs } from 'angular-three';
 import { box } from 'angular-three-cannon/body';
-import * as THREE from 'three';
+import type { Mesh } from 'three';
 
 @Component({
   selector: 'app-floating-cube',
@@ -31,7 +31,7 @@ export class FloatingCube {
   color = input.required<string>();
   scale = input(1);
 
-  private meshRef = viewChild.required<ElementRef<THREE.Mesh>>('mesh');
+  private meshRef = viewChild.required<ElementRef<Mesh>>('mesh');
 
   constructor() {
     box(
