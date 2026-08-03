@@ -1,4 +1,4 @@
-<div class="block relative h-screen mx-auto overflow-hidden pt-16">
+<div class="flex flex-col relative min-h-screen mx-auto pt-16">
   <div class="absolute inset-0 z-0">
     <hero-canvas />
   </div>
@@ -8,7 +8,7 @@
   ></div>
 
   <div
-    class="relative z-10 h-full flex flex-col justify-center px-8 sm:px-12 md:px-24 py-8 md:py-0"
+    class="relative z-10 flex-1 flex flex-col justify-center px-4 sm:px-12 md:px-24 py-4 md:py-0"
   >
     <div>
       <h2
@@ -17,12 +17,12 @@
         {{ t().hero.greeting }}
       </h2>
       <h1
-        class="mt-6 sm:mt-8 md:mt-10 text-pretty text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight text-secondary-300 animate-fade-in animation-delay-200"
+        class="mt-4 sm:mt-6 md:mt-8 text-pretty text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold tracking-tight text-secondary-300 animate-fade-in animation-delay-200"
       >
         {{ t().hero.intro }} <span class="text-primary">{{ t().hero.name }}</span>
       </h1>
       <p
-        class="text-base-content mt-4 sm:mt-6 md:mt-8 text-pretty text-base sm:text-lg md:text-xl/8 font-medium animate-fade-in animation-delay-400"
+        class="text-base-content mt-3 sm:mt-5 md:mt-6 text-pretty text-base sm:text-lg md:text-xl/8 font-medium animate-fade-in animation-delay-400"
       >
         {{ t().hero.role }}
       </p>
@@ -31,7 +31,7 @@
 
   <app-social-media
     [divClass]="
-      'absolute z-10 bottom-10 left-0 right-0 px-8 sm:px-12 md:px-24 py-6 sm:py-8 md:py-10 flex gap-x-4 sm:gap-x-6 md:gap-x-8 text-base-content/70 animate-fade-in animation-delay-600'
+      'relative z-10 px-4 sm:px-12 md:px-24 py-4 sm:py-6 md:py-8 md:pb-16 flex gap-x-4 sm:gap-x-6 md:gap-x-8 text-base-content/70 animate-fade-in animation-delay-600'
     "
   />
 
