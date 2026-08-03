@@ -4,7 +4,7 @@ import { LanguageService } from '../../i18n/language.service';
 import { ProjectCard } from './components/project-card/project-card';
 import { projectsData } from './content/projects.data';
 import { RouterLink } from '@angular/router';
-import { Link } from '../../components/shared/link/link';
+import { Link } from '../../shared/components/link/link';
 
 @Component({
   selector: 'app-projects',

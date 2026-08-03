@@ -4,7 +4,12 @@ interface TranslationShape {
   about: { title: string };
   experience: { title: string };
   education: { title: string };
-  projects: { title: string };
+  projects: {
+    title: string;
+    readMore: string;
+    openProject: string;
+    gallery: { open: string };
+  };
   footer: { copyright: string };
 }
 
@@ -25,7 +30,12 @@ export const translations: Record<import('./language').Language, TranslationShap
     about: { title: 'Sobre mí' },
     experience: { title: 'Experiencia' },
     education: { title: 'Educación' },
-    projects: { title: 'Proyectos' },
+    projects: {
+      title: 'Proyectos',
+      readMore: 'Ver más',
+      openProject: 'Ver proyecto',
+      gallery: { open: 'Abrir galería' },
+    },
     footer: {
       copyright: 'Derechos reservados',
     },
@@ -46,7 +56,12 @@ export const translations: Record<import('./language').Language, TranslationShap
     about: { title: 'About' },
     education: { title: 'Education' },
     experience: { title: 'Experience' },
-    projects: { title: 'Projects' },
+    projects: {
+      title: 'Projects',
+      readMore: 'Read more',
+      openProject: 'View project',
+      gallery: { open: 'Open gallery' },
+    },
     footer: {
       copyright: 'All rights reserved',
     },

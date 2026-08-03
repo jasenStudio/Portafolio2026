@@ -1,0 +1,72 @@
+<div class="card bg-base-100 shadow-sm border border-base-300 h-full md:w-80 lg:w-96 lg:mx-auto">
+  <figure class="relative">
+    <swiper-container
+      class="w-full h-48 lg:h-60 block"
+      slides-per-view="1"
+      [attr.navigation]="hasMultipleImages() ? '' : null"
+      [attr.pagination]="hasMultipleImages() ? '' : null"
+      [attr.loop]="hasMultipleImages() ? '' : null"
+      (slidechange)="onSlideChange($event)"
+    >
+      @for (img of images(); track $index) {
+        <swiper-slide>
+          <img
+            [src]="img"
+            [alt]="title()"
+            class="w-full h-48 lg:h-60 object-cover cursor-pointer"
+            (click)="openImageModal()"
+          />
+        </swiper-slide>
+      }
+    </swiper-container>
+    @if (hasMultipleImages()) {
+      <button
+        type="button"
+        (click)="openImageModal()"
+        class="absolute bottom-3 right-3 w-9 h-9 rounded-full bg-black/50 flex items-center justify-center backdrop-blur-sm text-white hover:bg-black/70 transition-colors"
+        [attr.aria-label]="t().projects.gallery.open"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <rect x="3" y="3" width="7" height="7" rx="1" />
+          <rect x="14" y="3" width="7" height="7" rx="1" />
+          <rect x="3" y="14" width="7" height="7" rx="1" />
+          <rect x="14" y="14" width="7" height="7" rx="1" />
+        </svg>
+      </button>
+    }
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">
+      <span class="text-primary text-sm font-mono">{{ id() }}</span>
+      @if (hasExternalLink()) {
+        <a
+          [href]="href()"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:underline underline-offset-2"
+        >
+          {{ title() }}
+        </a>
+      } @else {
+        <span>{{ title() }}</span>
+      }
+    </h2>
+    <p class="text-base-content/75 py-3">
+      @if (isTruncated()) {
+        {{ truncatedDescription() }}
+        <button type="button" class="link link-primary" (click)="openDescriptionModal()">
+          {{ t().projects.readMore }}
+        </button>
+      } @else {
+        {{ description() }}
+      }
+    </p>
+    <div class="flex flex-wrap gap-2 mt-auto">
+      @for (tech of techs(); track tech.id) {
+        <span class="bg-base-content text-base-100 px-3 py-1 rounded-lg text-sm font-medium">
+          {{ tech.name }}
+        </span>
+      }
+    </div>
+  </div>
+</div>

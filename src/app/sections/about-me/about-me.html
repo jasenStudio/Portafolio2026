@@ -24,17 +24,11 @@
               {{ paragraph }}
             </p>
           }
-          <div class="flex flex-wrap gap-2 mt-10 animate-on-viewport animation-delay-800">
-          <div class="flex flex-wrap gap-2 md:gap-3">
-            @for (tech of content().technologies; track tech) {
-              <span
-                class="badge badge-ghost badge-lg text-base-content px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-sm sm:text-base md:text-lg font-medium transition-colors duration-200 hover:bg-base-300 border border-transparent"
-              >
-                {{ tech }}
-              </span>
+          <div class="flex flex-wrap gap-2 md:gap-3 mt-10 animate-on-viewport animation-delay-800">
+            @for (tech of technologies(); track tech.id) {
+              <app-tech-badge [tech]="tech" variant="ghost" />
             }
           </div>
-        </div>
       </div>
     </div>
   </div>

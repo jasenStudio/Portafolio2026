@@ -4,7 +4,6 @@ import { AboutMe } from '../../sections/about-me/about-me';
 import { Projects } from '../../sections/projects/projects';
 import { Experience } from '../../sections/experience/experience';
 import { Education } from '../../sections/education/education';
-import { Footer } from '../../components/shared/footer/footer';
 
 @Component({
   selector: 'app-porfolio-page',

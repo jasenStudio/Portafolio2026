@@ -145,3 +145,8 @@ body {
   font-style: normal;
   height: 100%;
 }
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-display: swap;
+}

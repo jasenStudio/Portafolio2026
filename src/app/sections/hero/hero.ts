@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { LanguageService } from '../../i18n/language.service';
 import { HeroCanvas } from './components/hero-canvas/hero-canvas';
 import { PhysicsState } from './components/hero-canvas/state';
-import { SocialMedia } from '../../components/shared/icons/social-media/social-media';
+import { SocialMedia } from '../../shared/components/icons/social-media/social-media';
 
 @Component({
   selector: 'section-hero',

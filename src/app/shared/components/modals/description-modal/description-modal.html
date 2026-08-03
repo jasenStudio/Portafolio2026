@@ -1,0 +1,30 @@
+<dialog #dialog class="modal" (close)="onClose()">
+  <div class="modal-box">
+    <form method="dialog">
+      <button
+        type="submit"
+        class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+        aria-label="close"
+      >
+        ✕
+      </button>
+    </form>
+    @if (data(); as data) {
+      <h3 class="text-lg font-bold pr-8">{{ data.title }}</h3>
+      <p class="py-4 whitespace-pre-line">{{ data.description }}</p>
+      @if (data.href) {
+        <div class="modal-action">
+          <a
+            [href]="data.href"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            {{ t().projects.openProject }}
+          </a>
+        </div>
+      }
+    }
+  </div>
+  <form method="dialog" class="modal-backdrop"><button>close</button></form>
+</dialog>

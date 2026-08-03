@@ -1,9 +1,9 @@
 import { Component, ElementRef, viewChild } from '@angular/core';
 
-import { NavBar } from './components/shared/nav-bar/nav-bar';
-import { NavDrawer } from './components/shared/nav-bar/components/nav-drawer/nav-drawer';
+import { NavBar } from './shared/components/nav-bar/nav-bar';
+import { NavDrawer } from './shared/components/nav-bar/components/nav-drawer/nav-drawer';
 
-import { Footer } from './components/shared/footer/footer';
+import { Footer } from './shared/components/footer/footer';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
