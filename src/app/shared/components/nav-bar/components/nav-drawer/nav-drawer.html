@@ -2,6 +2,9 @@
 <div class="flex flex-col min-h-full w-72 bg-base-100 text-base-content p-4">
   <ul class="menu">
     <li>
+      <a routerLink="." [fragment]="'hero'">{{ t().nav.hero }}</a>
+    </li>
+    <li>
       <a routerLink="." [fragment]="'about-me'">{{ t().nav.about }}</a>
     </li>
     <li>

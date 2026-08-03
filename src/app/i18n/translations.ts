@@ -1,5 +1,5 @@
 interface TranslationShape {
-  nav: { about: string; projects: string; experience: string; education: string };
+  nav: { about: string; projects: string; experience: string; education: string; hero: string };
   hero: { greeting: string; intro: string; name: string; role: string };
   about: { title: string };
   experience: { title: string };
@@ -17,6 +17,7 @@ interface TranslationShape {
 export const translations: Record<import('./language').Language, TranslationShape> = {
   es: {
     nav: {
+      hero: 'Inicio',
       about: 'Sobre mí',
       projects: 'Proyectos',
       experience: 'Experiencia',
@@ -44,6 +45,7 @@ export const translations: Record<import('./language').Language, TranslationShap
   },
   en: {
     nav: {
+      hero: 'Home',
       about: 'About',
       projects: 'Projects',
       experience: 'Experience',

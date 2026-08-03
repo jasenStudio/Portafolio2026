@@ -12,25 +12,39 @@
           />
         </div>
       </div>
-      <div class="hidden md:block flex flex-col md:items-end gap-4">
+      <div class="hidden md:block flex-col md:items-end gap-4">
         <nav class="flex gap-x-8">
-          <a href="#about" class="text-sm text-base-content hover:text-base-300 transition-colors">
+          <a
+            routerLink="."
+            [fragment]="'hero'"
+            class="text-sm text-base-content hover:text-base-300 transition-colors"
+          >
+            {{ t().nav.hero }}
+          </a>
+          <a
+            routerLink="."
+            [fragment]="'about-me'"
+            class="text-sm text-base-content hover:text-base-300 transition-colors"
+          >
             {{ t().nav.about }}
           </a>
           <a
-            href="#projects"
+            routerLink="."
+            [fragment]="'projects'"
             class="text-sm text-base-content hover:text-base-300 transition-colors"
           >
             {{ t().nav.projects }}
           </a>
           <a
-            href="#experience"
+            routerLink="."
+            [fragment]="'experience'"
             class="text-sm text-base-content hover:text-base-300 transition-colors"
           >
             {{ t().nav.experience }}
           </a>
           <a
-            href="#education"
+            routerLink="."
+            [fragment]="'education'"
             class="text-sm text-base-content hover:text-gray-800 transition-colors"
           >
             {{ t().nav.education }}

@@ -21,6 +21,11 @@
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
       <li>
+        <a routerLink="." [fragment]="'hero'">
+          {{ t().nav.hero }}
+        </a>
+      </li>
+      <li>
         <a routerLink="." [fragment]="'about-me'">{{ t().nav.about }}</a>
       </li>
       <li>
