@@ -7,6 +7,7 @@
       [attr.pagination]="hasMultipleImages() ? '' : null"
       [attr.loop]="hasMultipleImages() ? '' : null"
       (slidechange)="onSlideChange($event)"
+      css-mode="true"
     >
       @for (img of images(); track $index) {
         <swiper-slide>

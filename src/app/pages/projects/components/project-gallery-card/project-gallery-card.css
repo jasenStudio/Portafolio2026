@@ -1,1 +1,6 @@
 /* ProjectGalleryCard styles */
+/* Cambiar el color y tamaño del icono */
+swiper-container {
+  --swiper-navigation-color: oklch(var(--p));
+  --swiper-navigation-size: 40px; /* opcional, tamaño */
+}

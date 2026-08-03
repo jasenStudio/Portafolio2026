@@ -14,22 +14,25 @@ export interface DescriptionModalData {
 
 @Injectable({ providedIn: 'root' })
 export class DialogService {
-  readonly imageModal = signal<ImageModalData | null>(null);
-  readonly descriptionModal = signal<DescriptionModalData | null>(null);
+  private readonly _imageModal = signal<ImageModalData | null>(null);
+  private readonly _descriptionModal = signal<DescriptionModalData | null>(null);
+
+  readonly imageModal = this._imageModal.asReadonly();
+  readonly descriptionModal = this._descriptionModal.asReadonly();
 
   openImage(data: ImageModalData): void {
-    this.imageModal.set(data);
+    this._imageModal.set(data);
   }
 
   closeImage(): void {
-    this.imageModal.set(null);
+    this._imageModal.set(null);
   }
 
   openDescription(data: DescriptionModalData): void {
-    this.descriptionModal.set(data);
+    this._descriptionModal.set(data);
   }
 
   closeDescription(): void {
-    this.descriptionModal.set(null);
+    this._descriptionModal.set(null);
   }
 }

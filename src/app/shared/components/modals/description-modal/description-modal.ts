@@ -17,20 +17,28 @@ export class DescriptionModal {
   t = this.lang.t;
 
   constructor() {
-    effect(() => {
+    effect((onCleanup) => {
       const dialogRef = this.dialog();
       const data = this.data();
       if (!dialogRef) return;
 
       const dialog = dialogRef.nativeElement;
+
+      // Sincroniza el cierre nativo (Esc, backdrop) con el estado del servicio
+      const handleClose = () => {
+        if (this.data()) {
+          this.dialogService.closeDescription();
+        }
+      };
+      dialog.addEventListener('close', handleClose);
+      onCleanup(() => dialog.removeEventListener('close', handleClose));
+
       if (data) {
         if (!dialog.open) {
           dialog.showModal();
         }
-      } else {
-        if (dialog.open) {
-          dialog.close();
-        }
+      } else if (dialog.open) {
+        dialog.close();
       }
     });
   }

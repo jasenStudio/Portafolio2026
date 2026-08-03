@@ -16,19 +16,19 @@
         class="w-full max-h-[70vh] object-contain"
       />
       @if (data.images.length > 1) {
-        <div class="flex items-center justify-center gap-4 p-3">
+        <div class="flex items-center justify-center gap-4 p-4">
           <button
             type="button"
-            class="btn btn-circle"
+            class="btn btn-primary btn-circle btn-md shadow-lg hover:shadow-xl hover:scale-105 transition-all text-xl"
             (click)="prevImage()"
             aria-label="previous"
           >
             ‹
           </button>
-          <span class="font-mono text-sm">{{ activeIndex() + 1 }} / {{ data.images.length }}</span>
+          <span class="font-mono text-sm font-semibold">{{ activeIndex() + 1 }} / {{ data.images.length }}</span>
           <button
             type="button"
-            class="btn btn-circle"
+            class="btn btn-primary btn-circle btn-md shadow-lg hover:shadow-xl hover:scale-105 transition-all text-xl"
             (click)="nextImage()"
             aria-label="next"
           >
