@@ -12,6 +12,15 @@
     @if (data(); as data) {
       <h3 class="text-lg font-bold pr-8">{{ data.title }}</h3>
       <p class="py-4 whitespace-pre-line">{{ data.description }}</p>
+      @if (data.technologies.length > 0) {
+        <div class="flex flex-wrap gap-2 py-2">
+          @for (tech of data.technologies; track tech.id) {
+            <span class="bg-base-content text-base-100 px-3 py-1 rounded-lg text-sm font-medium">
+              {{ tech.name }}
+            </span>
+          }
+        </div>
+      }
       @if (data.href) {
         <div class="modal-action">
           <a

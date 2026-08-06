@@ -29,7 +29,15 @@
   </div>
 
   <p class="text-base sm:text-lg text-base-content/75 leading-relaxed pr-12 sm:pr-14 md:pr-16">
-    {{ description() }}
+    <span class="line-clamp-2">{{ description() }}</span>
+    <app-link
+      [path]="'/projects'"
+      [mode]="'single'"
+      [singleParameter]="slug()"
+      [linkClass]="'link link-primary text-sm align-baseline'"
+    >
+      {{ t().projects.readMore }}
+    </app-link>
   </p>
 
   <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-2">

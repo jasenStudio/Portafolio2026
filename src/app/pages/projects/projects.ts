@@ -9,6 +9,7 @@ import { technologiesData, technology } from '../../shared/content/technologies'
 import { ProjectGalleryCard } from './components/project-gallery-card/project-gallery-card';
 import { ImageModal } from '../../shared/components/modals/image-modal/image-modal';
 import { DescriptionModal } from '../../shared/components/modals/description-modal/description-modal';
+import { DialogService } from '../../services/dialog.service';
 
 interface filtersData {
   search: string;
@@ -24,11 +25,25 @@ interface filtersData {
 export default class ProjectsPage {
   private lang = inject(LanguageService);
   private route = inject(ActivatedRoute);
+  private dialogService = inject(DialogService);
 
   private techFromUrl = toSignal(
     this.route.queryParamMap.pipe(map((params) => params.get('tech'))),
     { initialValue: null },
   );
+
+  private slugParam = toSignal(
+    this.route.paramMap.pipe(map((params) => params.get('slug'))),
+    { initialValue: null },
+  );
+
+  private projectsForLanguage = computed(() => projectsData[this.lang.current()]);
+
+  private selectedProject = computed(() => {
+    const slug = this.slugParam();
+    if (!slug) return null;
+    return this.projectsForLanguage().find((p) => p.slug === slug) ?? null;
+  });
 
   t = this.lang.t;
 
@@ -48,6 +63,19 @@ export default class ProjectsPage {
         this.filtersModel.update((m) => ({ ...m, technology: tech }));
       }
     });
+
+    effect(() => {
+      const project = this.selectedProject();
+      const modal = this.dialogService.descriptionModal();
+      if (project && !modal) {
+        this.dialogService.openDescription({
+          title: project.title,
+          description: project.description,
+          href: project.href,
+          technologies: this.techsFor(project),
+        });
+      }
+    });
   }
 
   groupedTechnologies = computed(() => {
@@ -58,8 +86,6 @@ export default class ProjectsPage {
     }
     return [...byType.entries()].map(([type, items]) => ({ type, items }));
   });
-
-  private projectsForLanguage = computed(() => projectsData[this.lang.current()]);
 
   filteredProjects = computed<Project[]>(() => {
     const search = this.filterForm.search().value().toLowerCase().trim();

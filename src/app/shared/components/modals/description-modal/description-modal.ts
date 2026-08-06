@@ -1,6 +1,7 @@
 import { Component, effect, ElementRef, inject, viewChild } from '@angular/core';
 import { DialogService } from '../../../../services/dialog.service';
 import { LanguageService } from '../../../../i18n/language.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'description-modal',
@@ -10,6 +11,8 @@ import { LanguageService } from '../../../../i18n/language.service';
 export class DescriptionModal {
   private dialogService = inject(DialogService);
   private lang = inject(LanguageService);
+  private router = inject(Router);
+  private route = inject(ActivatedRoute);
 
   private dialog = viewChild<ElementRef<HTMLDialogElement>>('dialog');
 
@@ -24,10 +27,10 @@ export class DescriptionModal {
 
       const dialog = dialogRef.nativeElement;
 
-      // Sincroniza el cierre nativo (Esc, backdrop) con el estado del servicio
       const handleClose = () => {
         if (this.data()) {
           this.dialogService.closeDescription();
+          this.navigateBackIfSlug();
         }
       };
       dialog.addEventListener('close', handleClose);
@@ -45,5 +48,13 @@ export class DescriptionModal {
 
   onClose(): void {
     this.dialogService.closeDescription();
+    this.navigateBackIfSlug();
+  }
+
+  private navigateBackIfSlug(): void {
+    const slug = this.route.snapshot.paramMap.get('slug');
+    if (slug) {
+      this.router.navigate(['/projects']);
+    }
   }
 }

@@ -36,6 +36,13 @@ export class ProjectGalleryCard {
   techs = computed<technology[]>(() => {
     return this.badges()
       .map((id) => technologiesData.find((t) => t.id === id))
+      .filter((t): t is technology => t !== undefined && t.showInCards)
+      .slice(0, 6);
+  });
+
+  allTechs = computed<technology[]>(() => {
+    return this.badges()
+      .map((id) => technologiesData.find((t) => t.id === id))
       .filter((t): t is technology => t !== undefined);
   });
 
@@ -71,6 +78,7 @@ export class ProjectGalleryCard {
       title: this.title(),
       description: this.description(),
       href: this.href(),
+      technologies: this.allTechs(),
     });
   }
 }

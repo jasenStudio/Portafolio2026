@@ -1,4 +1,5 @@
 import { Language } from '../../../i18n/language';
+import { stackTecnologiesIdsByProject } from './stackTechnologies.data';
 
 export interface Project {
   id: string;
@@ -25,17 +26,13 @@ export const projectsData: Record<Language, Project[]> = {
   es: [
     {
       id: '01',
-      title: 'AI Dev Roundup NewsLetter',
+      title: 'StackMyHobbies',
       description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, ad, quae laboriosam modi unde voluptate ducimus veniam culpa vero iure est. Aperiam laboriosam fugiat dicta id nostrum numquam, suscipit repudiandae.',
-      technologyIds: [1, 2, 3],
-      href: '',
-      slug: slugify('AI Dev Roundup NewsLetter'),
-      images: [
-        'https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp',
-        'https://imgs.search.brave.com/pPrhgTqkcpIrhhXh4GVH7k5Zpk9bOrPv6eGqWMPDj-g/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMjIy/NTkzMjgwMS92ZWN0/b3IvYXJ0LWxldHRl/ci1uLW1vZGVybi1m/b250LXRyZW5keS1h/bHBoYWJldC5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9bldr/QXlFUEl4MGNWT0tZ/QkdqTkJRdmdsVTQx/aHZlWDBPc3dkREhu/YVY5Zz0',
-        'https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp',
-      ],
+        'Aplicación web para gestionar y realizar seguimiento de hobbies y contenidos de entretenimiento como series, películas, anime, libros, videojuegos y manga. Permite organizar bibliotecas personales, registrar el progreso, calificar contenidos, administrar etiquetas y visualizar información mediante filtros, ordenamiento y una interfaz moderna. Incluye autenticación completa, internacionalización y una arquitectura modular basada en Vue 3.',
+      technologyIds: stackTecnologiesIdsByProject.stackMyHobbies.stacks,
+      href: 'https://stackmyhobbies.netlify.app/',
+      slug: slugify('StackMyHobbies'),
+      images: stackTecnologiesIdsByProject.stackMyHobbies.images,
     },
     {
       id: '02',
@@ -54,17 +51,13 @@ export const projectsData: Record<Language, Project[]> = {
   en: [
     {
       id: '01',
-      title: 'AI Dev Roundup NewsLetter',
+      title: 'StackMyHobbies',
       description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, ad, quae laboriosam modi unde voluptate ducimus veniam culpa vero iure est. Aperiam laboriosam fugiat dicta id nostrum numquam, suscipit repudiandae.',
-      technologyIds: [1, 2, 3],
-      href: '',
-      slug: slugify('AI Dev Roundup NewsLetter'),
-      images: [
-        'https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp',
-        'https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp',
-        'https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp',
-      ],
+        'A web application for tracking and organizing entertainment content such as TV series, movies, anime, books, manga, and video games. Users can manage personal libraries, monitor progress, rate content, organize items with tags, and browse their collection through filtering, sorting, and customizable views. The application features complete authentication, internationalization, and a modular architecture built with Vue 3.',
+      technologyIds: stackTecnologiesIdsByProject.stackMyHobbies.stacks,
+      href: 'https://stackmyhobbies.netlify.app/',
+      slug: slugify('StackMyHobbies'),
+      images: stackTecnologiesIdsByProject.stackMyHobbies.images,
     },
     {
       id: '02',

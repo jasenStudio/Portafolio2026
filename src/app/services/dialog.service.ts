@@ -1,4 +1,5 @@
 import { Injectable, signal } from '@angular/core';
+import { technology } from '../shared/content/technologies';
 
 export interface ImageModalData {
   images: string[];
@@ -10,6 +11,7 @@ export interface DescriptionModalData {
   title: string;
   description: string;
   href: string;
+  technologies: technology[];
 }
 
 @Injectable({ providedIn: 'root' })
