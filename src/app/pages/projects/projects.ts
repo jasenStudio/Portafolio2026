@@ -1,4 +1,4 @@
-import { Component, computed, effect, inject, signal } from '@angular/core';
+import { Component, computed, effect, inject, signal, untracked } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
@@ -66,7 +66,7 @@ export default class ProjectsPage {
 
     effect(() => {
       const project = this.selectedProject();
-      const modal = this.dialogService.descriptionModal();
+      const modal = untracked(() => this.dialogService.descriptionModal());
       if (project && !modal) {
         this.dialogService.openDescription({
           title: project.title,

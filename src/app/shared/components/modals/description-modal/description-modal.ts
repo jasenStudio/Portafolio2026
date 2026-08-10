@@ -54,7 +54,7 @@ export class DescriptionModal {
   private navigateBackIfSlug(): void {
     const slug = this.route.snapshot.paramMap.get('slug');
     if (slug) {
-      this.router.navigate(['/projects']);
+      this.router.navigate(['/projects'], { replaceUrl: true });
     }
   }
 }
