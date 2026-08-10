@@ -7,4 +7,12 @@ export const stackTecnologiesIdsByProject = {
       'https://placehold.co/1280x720?text=StackMyHobbies+3',
     ],
   },
+  AmcGestionDelRiesgo: {
+    stacks: [3, 8, 13, 33],
+    images: [
+      'https://placehold.co/1280x720?text=AMC+1',
+      'https://placehold.co/1280x720?text=AMC+2',
+      'https://placehold.co/1280x720?text=AMC+3',
+    ],
+  },
 };

@@ -36,15 +36,15 @@ export const projectsData: Record<Language, Project[]> = {
     },
     {
       id: '02',
-      title: 'StackMyHobbies',
+      title: 'AMC Gestión de Riesgos SAS',
       description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, ad, quae laboriosam modi unde voluptate ducimus veniam culpa vero iure est. Aperiam laboriosam fugiat dicta id nostrum numquam, suscipit repudiandae.',
-      technologyIds: [2, 3, 4, 5],
-      href: '',
-      slug: slugify('AI Dev Roundup NewsLetter'),
+        'Sitio web corporativo para AMC Gestión de Riesgos SAS, diseñado para presentar sus servicios y fortalecer su presencia digital. Incluye una sección dinámica de proyectos donde los administradores pueden crear, editar y eliminar proyectos, mientras los visitantes pueden consultar sus detalles. También incorpora un blog administrable orientado a la publicación de contenido y a la generación de tráfico orgánico mediante SEO.',
+      technologyIds: stackTecnologiesIdsByProject.AmcGestionDelRiesgo.stacks,
+      href: 'https://www.amcgestiondelriesgo.com.co/',
+      slug: slugify('AMC Gestión de Riesgos SAS'),
       images: [
-        'https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp',
-        'https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp',
+        'https://placehold.co/1280x720?text=AMC+Gestion+de+Riesgos+1',
+        'https://placehold.co/1280x720?text=AMC+Gestion+de+Riesgos+2',
       ],
     },
   ],
@@ -61,16 +61,13 @@ export const projectsData: Record<Language, Project[]> = {
     },
     {
       id: '02',
-      title: 'StackMyHobbies',
+      title: 'AMC Gestión de Riesgos SAS',
       description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, ad, quae laboriosam modi unde voluptate ducimus veniam culpa vero iure est. Aperiam laboriosam fugiat dicta id nostrum numquam, suscipit repudiandae.',
-      technologyIds: [2, 3, 4, 5],
+        'Corporate website for AMC Gestión de Riesgos SAS, designed to showcase its services and strengthen its digital presence. It includes a dynamic projects section where administrators can create, edit, and delete projects, while visitors can browse project details. The website also features a manageable blog focused on publishing valuable content and generating organic traffic through SEO.',
+      technologyIds: stackTecnologiesIdsByProject.AmcGestionDelRiesgo.stacks,
       href: '',
-      slug: slugify('AI Dev Roundup NewsLetter'),
-      images: [
-        'https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp',
-        'https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp',
-      ],
+      slug: slugify('AMC Gestión de Riesgos SAS'),
+      images: stackTecnologiesIdsByProject.AmcGestionDelRiesgo.images,
     },
   ],
 };

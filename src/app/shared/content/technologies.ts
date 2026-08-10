@@ -58,4 +58,5 @@ export const technologiesData: technology[] = [
   { id: 30, name: 'Vue I18n', type: 'library', showInCards: false },
   { id: 31, name: 'Headless UI', type: 'library', showInCards: false },
   { id: 32, name: 'DaisyUI', type: 'library', showInCards: false },
+  { id: 33, name: 'Livewire', type: 'framework', showInCards: true },
 ];
