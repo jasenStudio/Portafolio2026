@@ -10,11 +10,23 @@
       </button>
     </form>
     @if (data(); as data) {
-      <img
-        [src]="data.images[activeIndex()]"
-        [alt]="data.title"
-        class="w-full max-h-[70vh] object-contain"
-      />
+      <swiper-container
+        #swiperContainer
+        class="w-full"
+        slides-per-view="1"
+        zoom="true"
+        zoom-max-ratio="3"
+        [initial-slide]="activeIndex()"
+        (swiperslidechange)="onSlideChange($event)"
+      >
+        @for (img of data.images; track $index) {
+          <swiper-slide>
+            <div class="swiper-zoom-container">
+              <img [src]="img" [alt]="data.title" class="zoom-image" />
+            </div>
+          </swiper-slide>
+        }
+      </swiper-container>
       @if (data.images.length > 1) {
         <div class="flex items-center justify-center gap-4 p-4">
           <button

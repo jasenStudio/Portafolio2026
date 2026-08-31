@@ -1,8 +1,15 @@
-import { Component, effect, ElementRef, inject, signal, viewChild } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, effect, ElementRef, inject, signal, viewChild } from '@angular/core';
+import { register } from 'swiper/element';
+import Swiper from 'swiper';
+import { Zoom } from 'swiper/modules';
 import { DialogService } from '../../../../services/dialog.service';
+
+Swiper.use([Zoom]);
+register();
 
 @Component({
   selector: 'image-modal',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './image-modal.html',
   styleUrl: './image-modal.css',
 })
@@ -10,6 +17,7 @@ export class ImageModal {
   private dialogService = inject(DialogService);
 
   private dialog = viewChild<ElementRef<HTMLDialogElement>>('dialog');
+  private swiperContainer = viewChild<ElementRef<HTMLElement>>('swiperContainer');
 
   data = this.dialogService.imageModal;
   activeIndex = signal(0);
@@ -47,6 +55,10 @@ export class ImageModal {
 
       if (data) {
         this.activeIndex.set(data.activeIndex);
+        queueMicrotask(() => {
+          const el = this.swiperContainer()?.nativeElement as any;
+          el?.swiper?.slideTo?.(data.activeIndex, 0);
+        });
         if (!dialog.open) {
           dialog.showModal();
         }
@@ -60,17 +72,30 @@ export class ImageModal {
     this.dialogService.closeImage();
   }
 
+  onSlideChange(event: Event): void {
+    const swiper = (event as CustomEvent).detail?.[0];
+    if (swiper) {
+      this.activeIndex.set(swiper.activeIndex);
+    }
+  }
+
+  private goto(delta: number): void {
+    const el = this.swiperContainer()?.nativeElement as any;
+    if (el?.swiper) {
+      delta > 0 ? el.swiper.slideNext() : el.swiper.slidePrev();
+    } else {
+      const data = this.data();
+      if (!data) return;
+      const length = data.images.length;
+      this.activeIndex.update((index) => (index + delta + length) % length);
+    }
+  }
+
   prevImage(): void {
-    const data = this.data();
-    if (!data) return;
-    const length = data.images.length;
-    this.activeIndex.update((index) => (index - 1 + length) % length);
+    this.goto(-1);
   }
 
   nextImage(): void {
-    const data = this.data();
-    if (!data) return;
-    const length = data.images.length;
-    this.activeIndex.update((index) => (index + 1) % length);
+    this.goto(1);
   }
 }
