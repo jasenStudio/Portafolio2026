@@ -12,6 +12,7 @@ interface TranslationShape {
   };
   footer: { copyright: string };
   pageTitle: { portfolio: string; projects: string };
+  show_more: string;
 }
 
 export const translations: Record<import('./language').Language, TranslationShape> = {
@@ -42,6 +43,7 @@ export const translations: Record<import('./language').Language, TranslationShap
       copyright: 'Derechos reservados',
     },
     pageTitle: { portfolio: 'Portafolio JaseDev', projects: 'Proyectos' },
+    show_more: 'Mostrar más',
   },
   en: {
     nav: {
@@ -70,5 +72,6 @@ export const translations: Record<import('./language').Language, TranslationShap
       copyright: 'All rights reserved',
     },
     pageTitle: { portfolio: 'Portfolio JaseDev', projects: 'Projects' },
+    show_more: 'Show more',
   },
 };
