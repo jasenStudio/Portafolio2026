@@ -42,10 +42,7 @@ export const projectsData: Record<Language, Project[]> = {
       technologyIds: stackTecnologiesIdsByProject.AmcGestionDelRiesgo.stacks,
       href: 'https://www.amcgestiondelriesgo.com.co/',
       slug: slugify('AMC Gestión de Riesgos SAS'),
-      images: [
-        'https://placehold.co/1280x720?text=AMC+Gestion+de+Riesgos+1',
-        'https://placehold.co/1280x720?text=AMC+Gestion+de+Riesgos+2',
-      ],
+      images: stackTecnologiesIdsByProject.AmcGestionDelRiesgo.images,
     },
   ],
   en: [
