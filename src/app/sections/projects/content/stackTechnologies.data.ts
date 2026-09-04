@@ -16,4 +16,13 @@ export const stackTecnologiesIdsByProject = {
       'https://res.cloudinary.com/cloud-jasen/image/upload/v1788141261/portfolio/amc/04-dashboard-form-blog-admin-amc_dmeuqx.webp',
     ],
   },
+  // 2) Agregar dentro de stackTecnologiesIdsByProject
+  sammyReplies: {
+    stacks: [35, 34, 36, 37, 38, 6, 14, 19], // Rails, Ruby, MongoDB, Sidekiq, Redis, React, Bootstrap, IA
+    images: [
+      'https://placehold.co/1280x720?text=Sammy+Replies+1',
+      'https://placehold.co/1280x720?text=Sammy+Replies+2',
+      'https://placehold.co/1280x720?text=Sammy+Replies+3',
+    ],
+  },
 };

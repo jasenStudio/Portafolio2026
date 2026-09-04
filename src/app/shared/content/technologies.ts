@@ -59,4 +59,10 @@ export const technologiesData: technology[] = [
   { id: 31, name: 'Headless UI', type: 'library', showInCards: false },
   { id: 32, name: 'DaisyUI', type: 'library', showInCards: false },
   { id: 33, name: 'Livewire', type: 'framework', showInCards: true },
+
+  { id: 34, name: 'Ruby', type: 'language', showInCards: true },
+  { id: 35, name: 'Ruby on Rails', type: 'framework', showInCards: true },
+  { id: 36, name: 'MongoDB', type: 'database', showInCards: true },
+  { id: 37, name: 'Sidekiq', type: 'tool', showInCards: true },
+  { id: 38, name: 'Redis', type: 'tool', showInCards: false },
 ];
