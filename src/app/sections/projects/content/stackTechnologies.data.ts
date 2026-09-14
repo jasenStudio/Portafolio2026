@@ -2,9 +2,9 @@ export const stackTecnologiesIdsByProject = {
   stackMyHobbies: {
     stacks: [1, 2, 7, 13, 8, 18, 21, 23, 24, 26, 30, 32, 15],
     images: [
-      'https://placehold.co/1280x720?text=StackMyHobbies+1',
-      'https://placehold.co/1280x720?text=StackMyHobbies+2',
-      'https://placehold.co/1280x720?text=StackMyHobbies+3',
+      'https://res.cloudinary.com/cloud-jasen/image/upload/v1789346460/portfolio/stackMyHobbies/StackMyhobbiesHome_vdcyu6.webp',
+      'https://res.cloudinary.com/cloud-jasen/image/upload/v1789346460/portfolio/stackMyHobbies/StackMyhobbiesEditar_mskx36.webp',
+      'https://res.cloudinary.com/cloud-jasen/image/upload/v1789346460/portfolio/stackMyHobbies/StackMyhobbiesDetalle_j8mgyf.webp',
     ],
   },
   AmcGestionDelRiesgo: {
@@ -20,9 +20,14 @@ export const stackTecnologiesIdsByProject = {
   sammyReplies: {
     stacks: [35, 34, 36, 37, 38, 6, 14, 19], // Rails, Ruby, MongoDB, Sidekiq, Redis, React, Bootstrap, IA
     images: [
-      'https://placehold.co/1280x720?text=Sammy+Replies+1',
-      'https://placehold.co/1280x720?text=Sammy+Replies+2',
-      'https://placehold.co/1280x720?text=Sammy+Replies+3',
+      'https://res.cloudinary.com/cloud-jasen/image/upload/v1789348194/portfolio/sammy_replies/SammyRepliesHome_ckrbnr.webp',
+      'https://res.cloudinary.com/cloud-jasen/image/upload/v1789348195/portfolio/sammy_replies/SammyRepliesProbar_xvs5ap.webp',
+      'https://res.cloudinary.com/cloud-jasen/image/upload/v1789348212/portfolio/sammy_replies/SammyRepliesConversation_rm3vfg.webp',
+      'https://res.cloudinary.com/cloud-jasen/image/upload/v1789348219/portfolio/sammy_replies/WhatsappConversation_fmz2ac.webp',
+      'https://res.cloudinary.com/cloud-jasen/image/upload/v1789348344/portfolio/sammy_replies/SammyRepliesCalendar_gk8lvk.webp',
+      'https://res.cloudinary.com/cloud-jasen/image/upload/v1789348344/portfolio/sammy_replies/SammyRepliesCalendarStatus_q9t7le.webp',
+      'https://res.cloudinary.com/cloud-jasen/image/upload/v1789348538/portfolio/sammy_replies/SammyRepliesUploadFileForIA_f2pd9e.webp',
+      'https://res.cloudinary.com/cloud-jasen/image/upload/v1789348537/portfolio/sammy_replies/SammyRepliesTestingIA_gal4t2.webp',
     ],
   },
 };
