@@ -55,13 +55,15 @@ export class ImageModal {
 
       if (data) {
         this.activeIndex.set(data.activeIndex);
-        queueMicrotask(() => {
-          const el = this.swiperContainer()?.nativeElement as any;
-          el?.swiper?.slideTo?.(data.activeIndex, 0);
-        });
         if (!dialog.open) {
           dialog.showModal();
         }
+        setTimeout(() => {
+          const el = this.swiperContainer()?.nativeElement as any;
+          if (el?.swiper && el.swiper.activeIndex !== data.activeIndex) {
+            el.swiper.slideTo(data.activeIndex, 0);
+          }
+        }, 0);
       } else if (dialog.open) {
         dialog.close();
       }
@@ -75,7 +77,7 @@ export class ImageModal {
   onSlideChange(event: Event): void {
     const swiper = (event as CustomEvent).detail?.[0];
     if (swiper) {
-      this.activeIndex.set(swiper.activeIndex);
+      this.activeIndex.set(swiper.realIndex ?? swiper.activeIndex);
     }
   }
 

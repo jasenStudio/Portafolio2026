@@ -61,15 +61,15 @@ export class ProjectGalleryCard {
   onSlideChange(event: Event): void {
     const swiper = (event as CustomEvent).detail?.[0];
     if (swiper) {
-      this.activeImageIndex.set(swiper.activeIndex);
+      this.activeImageIndex.set(swiper.realIndex);
     }
   }
 
-  openImageModal(): void {
+  openImageModal(index: number = 0): void {
     this.dialogService.openImage({
       images: this.images(),
       title: this.title(),
-      activeIndex: this.activeImageIndex(),
+      activeIndex: index,
     });
   }
 

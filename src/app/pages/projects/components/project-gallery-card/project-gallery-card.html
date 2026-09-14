@@ -15,7 +15,7 @@
             [src]="img"
             [alt]="title()"
             class="w-full h-48 lg:h-60 object-cover cursor-pointer"
-            (click)="openImageModal()"
+            (click)="openImageModal($index)"
           />
         </swiper-slide>
       }
@@ -23,7 +23,7 @@
     @if (hasMultipleImages()) {
       <button
         type="button"
-        (click)="openImageModal()"
+        (click)="openImageModal(activeImageIndex())"
         class="absolute bottom-3 right-3 w-9 h-9 rounded-full bg-black/50 flex items-center justify-center backdrop-blur-sm text-white hover:bg-black/70 transition-colors"
         [attr.aria-label]="t().projects.gallery.open"
       >
