@@ -30,4 +30,14 @@ export const stackTecnologiesIdsByProject = {
       'https://res.cloudinary.com/cloud-jasen/image/upload/v1789348537/portfolio/sammy_replies/SammyRepliesTestingIA_gal4t2.webp',
     ],
   },
+
+  shopApi: {
+    stacks: [11, 2, 40, 39, 19, 41], // Nestjs, TypeScript, Stripe,AgentIA, IA,TypeORM
+    images: [
+      'https://res.cloudinary.com/cloud-jasen/image/upload/v1789765866/portfolio/shop_api/sho_api_create_product_jdflu6.webp',
+      'https://res.cloudinary.com/cloud-jasen/image/upload/v1789765866/portfolio/shop_api/sho_api_check_session_ly8mqe.webp',
+      'https://res.cloudinary.com/cloud-jasen/image/upload/v1789765866/portfolio/shop_api/sho_api_check_session_ly8mqe.webp',
+      'https://res.cloudinary.com/cloud-jasen/image/upload/v1789765866/portfolio/shop_api/shop_api_show_invoice_pde5nb.webp',
+    ],
+  },
 };

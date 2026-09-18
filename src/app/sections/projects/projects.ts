@@ -15,5 +15,5 @@ import { Link } from '../../shared/components/link/link';
 export class Projects {
   private lang = inject(LanguageService);
   t = this.lang.t;
-  projects = computed(() => projectsData[this.lang.current()]);
+  projects = computed(() => projectsData[this.lang.current()].slice(0, 3));
 }

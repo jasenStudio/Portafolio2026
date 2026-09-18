@@ -65,4 +65,7 @@ export const technologiesData: technology[] = [
   { id: 36, name: 'MongoDB', type: 'database', showInCards: true },
   { id: 37, name: 'Sidekiq', type: 'tool', showInCards: true },
   { id: 38, name: 'Redis', type: 'tool', showInCards: false },
+  { id: 39, name: 'IA Agents', type: 'concept', showInCards: true },
+  { id: 40, name: 'Stripe', type: 'tool', showInCards: true },
+  { id: 41, name: 'TypeORM', type: 'library', showInCards: true },
 ];

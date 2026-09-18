@@ -1,0 +1,107 @@
+<div class="form-control w-full relative">
+  <div class="relative flex items-center">
+    <div class="absolute left-3.5 z-10 text-base-content/50 pointer-events-none flex items-center">
+      <i class="fa-solid fa-magnifying-glass text-xs"></i>
+    </div>
+
+    <input
+      type="text"
+      role="combobox"
+      [attr.aria-expanded]="isOpen()"
+      aria-haspopup="listbox"
+      [attr.aria-controls]="listboxIdValue"
+      [attr.aria-activedescendant]="activeId()"
+      class="input input-bordered w-full pl-10 pr-20 text-sm focus:outline-primary transition-all duration-200 shadow-sm rounded-xl"
+      [placeholder]="selectedLabel() || placeholder()"
+      [value]="query()"
+      (input)="handleInput($event)"
+      (keydown)="handleKeydown($event)"
+      (focus)="open()"
+      (blur)="touch.emit()"
+      [disabled]="disabled()"
+      [readonly]="readonly()"
+      autocomplete="off"
+    />
+
+    <div class="absolute right-2.5 flex items-center gap-1 z-10">
+      <button
+        type="button"
+        class="btn btn-ghost btn-xs btn-circle text-base-content/50 hover:text-error"
+        [class.hidden]="!canClear()"
+        title="Limpiar selección"
+        (click)="clear()"
+        [disabled]="disabled()"
+      >
+        <i class="fa-solid fa-xmark text-sm"></i>
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-ghost btn-xs btn-circle text-base-content/50"
+        title="Desplegar opciones"
+        (click)="toggle()"
+        [disabled]="disabled()"
+      >
+        <i
+          class="fa-solid fa-chevron-down text-xs transition-transform duration-200"
+          [class.rotate-180]="isOpen()"
+        ></i>
+      </button>
+    </div>
+  </div>
+
+  @if (isOpen()) {
+    <div
+      [id]="listboxIdValue"
+      role="listbox"
+      class="absolute top-full left-0 right-0 mt-2 z-50 bg-base-100 border border-base-200 rounded-2xl shadow-2xl overflow-hidden"
+    >
+      <ul
+        class="max-h-60 overflow-y-auto custom-scrollbar scrollbar-thin p-2 menu menu-sm w-full gap-1"
+      >
+        @if (emptyLabel()) {
+          <li
+            role="option"
+            [id]="optionId(-1)"
+            [attr.aria-selected]="value() === ''"
+            [class.bg-primary]="activeIndex() === -1"
+            [class.text-primary-content]="activeIndex() === -1"
+            [class.hover:bg-base-200]="activeIndex() !== -1"
+            class="rounded-lg cursor-pointer transition-colors"
+            (click)="selectEmpty()"
+          >
+            <span>{{ emptyLabel() }}</span>
+          </li>
+        }
+        @for (group of filteredGroups(); track group.label) {
+          <li class="menu-title">
+            <span>{{ group.label }}</span>
+          </li>
+          @for (option of group.items; track option.value) {
+            <li
+              role="option"
+              [id]="optionId(getGlobalIndex(group, option))"
+              [attr.aria-selected]="value() === option.value"
+              [class.bg-primary]="isActive(option, getGlobalIndex(group, option))"
+              [class.text-primary-content]="isActive(option, getGlobalIndex(group, option))"
+              [class.hover:bg-base-200]="!isActive(option, getGlobalIndex(group, option))"
+              class="rounded-lg cursor-pointer transition-colors"
+              (click)="select(option)"
+            >
+              <span [class.font-semibold]="value() === option.value">{{ option.label }}</span>
+            </li>
+          }
+        }
+      </ul>
+
+      <div
+        class="bg-base-200/60 px-3.5 py-2 text-[11px] text-base-content/60 flex justify-between items-center border-t border-base-200 font-medium"
+      >
+        <span>{{ totalMatches() }} opciones</span>
+        <span class="hidden sm:inline"
+          >Usa <kbd class="kbd kbd-xs">↑</kbd><kbd class="kbd kbd-xs">↓</kbd> para navegar</span
+        >
+      </div>
+    </div>
+  }
+</div>

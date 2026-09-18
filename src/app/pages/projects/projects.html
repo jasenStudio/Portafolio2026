@@ -16,16 +16,13 @@
       <input type="search" class="grow" placeholder="Search" [formField]="filterForm.search" />
     </label>
 
-    <select class="select select-base-content" [formField]="filterForm.technology">
-      <option value="">Todas las tecnologías</option>
-      @for (group of groupedTechnologies(); track group.type) {
-        <optgroup [label]="group.type">
-          @for (t of group.items; track t.id) {
-            <option [value]="t.id">{{ t.name }}</option>
-          }
-        </optgroup>
-      }
-    </select>
+    <app-select-searchable
+      class="w-full max-w-xs"
+      [formField]="filterForm.technology"
+      [options]="technologyOptions()"
+      placeholder="Buscar opción (ej. Vue, Angular, Docker)..."
+      emptyLabel="Todas las tecnologías"
+    />
   </form>
 
   <div class="grid grid-cols-12 gap-6">

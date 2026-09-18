@@ -10,6 +10,7 @@ import { ProjectGalleryCard } from './components/project-gallery-card/project-ga
 import { ImageModal } from '../../shared/components/modals/image-modal/image-modal';
 import { DescriptionModal } from '../../shared/components/modals/description-modal/description-modal';
 import { DialogService } from '../../services/dialog.service';
+import { SelectSearchable, SelectSearchableGroup } from '../../shared/components/select-searchable/select-searchable';
 
 interface filtersData {
   search: string;
@@ -18,7 +19,7 @@ interface filtersData {
 
 @Component({
   selector: 'app-page-projects',
-  imports: [FormField, ProjectGalleryCard, ImageModal, DescriptionModal],
+  imports: [FormField, SelectSearchable, ProjectGalleryCard, ImageModal, DescriptionModal],
   templateUrl: './projects.html',
   styleUrl: './projects.css',
 })
@@ -86,6 +87,13 @@ export default class ProjectsPage {
     }
     return [...byType.entries()].map(([type, items]) => ({ type, items }));
   });
+
+  technologyOptions = computed<SelectSearchableGroup[]>(() =>
+    this.groupedTechnologies().map((group) => ({
+      label: group.type,
+      items: group.items.map((t) => ({ value: String(t.id), label: t.name })),
+    })),
+  );
 
   filteredProjects = computed<Project[]>(() => {
     const search = this.filterForm.search().value().toLowerCase().trim();

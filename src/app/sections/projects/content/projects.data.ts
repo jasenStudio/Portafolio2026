@@ -54,6 +54,16 @@ export const projectsData: Record<Language, Project[]> = {
       slug: slugify('StackMyHobbies'),
       images: stackTecnologiesIdsByProject.stackMyHobbies.images,
     },
+    {
+      id: '04',
+      title: 'Shop API',
+      description:
+        'Backend en NestJS que simula un flujo completo de e-commerce: carrito de compra, checkout con Stripe y generación de factura en PDF. Construido con Spec-Driven Development — cada módulo nació como una especificación técnica antes de escribir código, con contratos de interfaz y criterios de aceptación verificables. El desarrollo siguió el patrón Orquestador/Worker: agentes de IA especializados, aislados con git worktree, coordinados por un agente orquestador que delega cada módulo según sus dependencias. Incluye conexión a base de datos con migraciones explícitas, integración de pagos con verificación de webhook, y generación de PDF on-demand.',
+      technologyIds: stackTecnologiesIdsByProject.shopApi.stacks,
+      href: 'https://github.com/jasenStudio/Shop-api-SDD',
+      slug: slugify('Shop API'),
+      images: stackTecnologiesIdsByProject.shopApi.images,
+    },
 
     // 3) Agregar dentro de projectsData.es
   ],
@@ -87,6 +97,16 @@ export const projectsData: Record<Language, Project[]> = {
       href: 'https://stackmyhobbies.netlify.app/',
       slug: slugify('StackMyHobbies'),
       images: stackTecnologiesIdsByProject.stackMyHobbies.images,
+    },
+    {
+      id: '04',
+      title: 'Shop API',
+      description:
+        'NestJS backend simulating a full e-commerce flow: shopping cart, Stripe checkout, and PDF invoice generation. Built with Spec-Driven Development — every module started as a technical specification before any code was written, with interface contracts and verifiable acceptance criteria. Development followed the Orchestrator/Worker pattern: specialized AI agents, isolated with git worktree, coordinated by an orchestrator agent that delegates each module based on its dependencies. Includes a database layer with explicit migrations, payment integration with webhook signature verification, and on-demand PDF generation.',
+      technologyIds: stackTecnologiesIdsByProject.shopApi.stacks,
+      href: 'https://github.com/jasenStudio/Shop-api-SDD',
+      slug: slugify('Shop API'),
+      images: stackTecnologiesIdsByProject.shopApi.images,
     },
 
     // 4) Agregar dentro de projectsData.en
