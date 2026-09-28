@@ -4,7 +4,9 @@
 >
   <div class="absolute inset-0 z-0">
     @defer (on immediate) {
-      <hero-canvas />
+      @if (isVisible()) {
+        <hero-canvas />
+      }
     } @placeholder (minimum 300ms) {
       <div class="w-full h-full bg-base-100/50"></div>
     }

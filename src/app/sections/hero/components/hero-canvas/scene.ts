@@ -40,7 +40,6 @@ extend({ AmbientLight, BoxGeometry, Mesh, MeshBasicMaterial, MeshStandardMateria
       <app-floating-cube [position]="[-1.5, 1.5, 0]" [color]="colors().primary" [scale]="1.1" />
       <app-floating-cube [position]="[1.5, 0.5, 0.5]" [color]="colors().secondary" [scale]="0.85" />
       <app-floating-cube [position]="[0, 2.5, -0.5]" [color]="colors().accent" [scale]="0.65" />
-      <app-floating-cube [position]="[-2.5, -1, 1]" [color]="colors().secondary" [scale]="0.75" />
     </ngtc-physics>
   `,
   imports: [FloatingCube, BoundaryPlane, NgtcPhysics],
