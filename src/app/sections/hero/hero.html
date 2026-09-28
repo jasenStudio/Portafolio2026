@@ -3,10 +3,10 @@
   id="hero"
 >
   <div class="absolute inset-0 z-0">
-    @defer (on viewport; prefetch on idle) {
+    @defer (on immediate) {
       <hero-canvas />
     } @placeholder (minimum 300ms) {
-      <div class="w-full h-full"></div>
+      <div class="w-full h-full bg-base-100/50"></div>
     }
   </div>
 

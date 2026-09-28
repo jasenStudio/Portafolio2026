@@ -67,12 +67,16 @@ export class SceneGraph {
   }
 
   private getCssColor(variable: string): string {
-    const el = document.createElement('div');
-    el.style.backgroundColor = `var(${variable})`;
-    el.style.display = 'none';
-    document.body.appendChild(el);
-    const color = getComputedStyle(el).backgroundColor;
-    document.body.removeChild(el);
-    return color || '#6366f1';
+    const value = getComputedStyle(document.documentElement)
+      .getPropertyValue(variable)
+      .trim();
+
+    if (!value) {
+      return '#6366f1';
+    }
+
+    const div = document.createElement('div');
+    div.style.color = value;
+    return div.style.color || '#6366f1';
   }
 }
